@@ -1,11 +1,24 @@
 package pageobject;
 
+import StepDefinitions.Hooks;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FadoChangeInfo {
+import java.util.concurrent.TimeUnit;
+
+public class ChangeInfoPage {
+
+    @FindBy (xpath = "//input[@id='auth-block__form-group__email']")
+    public WebElement txtusername ;
+
+    @FindBy (xpath = "//input[@type='password']")
+    public WebElement txtpassword ;
+
+    @FindBy (xpath = "//button[@class='my-btn -btn-pill auth-block__login-btn mz-btn-primary']")
+    public WebElement btnlogin ;
 
     @FindBy(xpath = "//button[@class='close']")
     public WebElement btnclose;
@@ -16,8 +29,8 @@ public class FadoChangeInfo {
     @FindBy (xpath = "//img[@class='user-edit-profile-icon']")
     public WebElement iconupdate ;
 
-//    @FindBy (xpath = "//div[@id='close-button-1545222288830']")
-//    public WebElement btnclosenoti;
+    @FindBy (xpath = "//div[@id='close-button-1545222288830']")
+    public WebElement iconclose;
 
     @FindBy (xpath = "//input[@type='email']")
     public WebElement fieldemail;
@@ -28,9 +41,11 @@ public class FadoChangeInfo {
     @FindBy (xpath = "//label[contains(text(),'Họ và tên là bắt buộc')]")
     public  WebElement lbemptyname;
 
-    public FadoChangeInfo (WebDriver driver)
+    public ChangeInfoPage(WebDriver driver)
     {
-        driver.get("https://fado.vn/thong-tin-ca-nhan");
+        driver.get("https://fado.vn/dang-nhap");
         PageFactory.initElements(driver, this);
+
     }
 }
+

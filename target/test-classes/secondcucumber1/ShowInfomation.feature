@@ -1,22 +1,33 @@
-Feature: Update information
+Feature: Update/Modify user information
 
-  Background:The user already login on fado
-    Given The user already login on website with username is "Thuyduong9813@gmail.com" and password is "thuyduong998"
+  Background: Login with customer account
+    Given The user already login to Fado website with account "thuyduong99813@gmail.com" and password "thuyduong998"
 
-  Scenario: Show the current information of user
-    Given The homepage is showed
-    When When the user open Account information function to change some info
-    Then The default info will be fill out to update form
+    @Test1
+  Scenario: Show current user's information for udpate
+    Given The update user information form is showed
+    Then The current user information is showed for default
+    And The email information can't be updated
+    And The date of birth is display as "dd-mm-yyyy" format
 
-  Scenario: The Email information can’t be updated
-    Given The account information page is showed
-    When  The user tried to change the email address
-    Then  Email field is disabled
+  Scenario: Show Calendar popup for date of birth selection
+    Given The update user information form is showed
+    When The user try to show the Calendar popup for new value for birthday. "21-01-1990" for example
+    Then The value of date of birth will be updated to "21-01-1990"
 
-  Scenario: Write full information
-    Given The change information page is displayed
-    When The user leaves full name field are blank
-    Then in-line error message "Họ và tên là bắt buộc" should be display
+  Scenario: Show the require field input
+    Given The update user information form is showed
+    When The user attempt to clear value of Fullname and Phone
+    Then The message "Họ và tên là bắt buộc" will be displayed below Fullname field
+    And The message "Điện thoại là bắt buộc" will be displayed below phone number
 
+  Scenario: Show update message for all valid values
+    Given The update user information form is showed
+    When The user attempt to update with all valid values
+    Then The message "Quý khách đã cập nhập thông tin tài khoản thành công !" will be showed
 
-
+  Scenario: Clear all values except Email field
+    Given The update user information form is showed
+    When The user attempt to clear all values
+    Then The user should see blank value for all except email field
+    And The email field value is "thuyduong99813@gmail.com"

@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Hook {
+public class Hooks {
     public static WebDriver driver;
     @Before
     public void opendriver()
@@ -14,23 +14,5 @@ public class Hook {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-    }
-
-    @Test
-    public void ShowInfo(ShowChangeInfoPageStepDef showChangeInfoPageStepDef)
-    {
-
-    }
-
-    @Test
-    public void Disable(DisableEmail disableEmail)
-    {
-
-    }
-
-    @Test
-    public void Invalid(InvalidInformationField invalidInformationField)
-    {
-
     }
 }
