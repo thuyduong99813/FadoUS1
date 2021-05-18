@@ -30,7 +30,7 @@ public class ShowInformationSteps {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         changeInfoPage.btnclose.click();
         changeInfoPage.drwname.click();
-        //changeInfoPage.iconupdate.click();
+        changeInfoPage.iconupdate.click();
     }
 
     @Given("^The update user information form is showed$")
