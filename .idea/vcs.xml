@@ -5,5 +5,6 @@
     <mapping directory="$PROJECT_DIR$/C-Users-Thuy-Duong-Java-for-QA-secondcucumber" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cucumberbtvn1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/secondcc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/secondcucumber" vcs="Git" />
   </component>
 </project>
