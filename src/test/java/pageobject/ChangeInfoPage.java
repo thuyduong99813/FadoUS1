@@ -24,22 +24,48 @@ public class ChangeInfoPage {
     public WebElement btnclose;
 
     @FindBy(xpath = "//span[@class='user-name-col']")
-    public WebElement drwname ;
+    public WebElement name;
 
     @FindBy (xpath = "//img[@class='user-edit-profile-icon']")
-    public WebElement iconupdate ;
+    public WebElement iconEdit;
 
     @FindBy (xpath = "//div[@id='close-button-1545222288830']")
     public WebElement iconclose;
 
     @FindBy (xpath = "//input[@type='email']")
-    public WebElement fieldemail;
+    public WebElement email;
 
     @FindBy (xpath = "//input[@name='fullname']")
     public WebElement txtfullname;
 
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement txtphone;
+
+    @FindBy (xpath = "//input[@name='birthdate']")
+    public WebElement birthday;
+
+    @FindBy(xpath = "//input[@class='numInput cur-year']")
+    public WebElement year;
+
+    @FindBy(xpath = "//div[@class='flatpickr-month']//select//option[contains(text(),\"Tháng ba\")]")
+    public WebElement month;
+
+    @FindBy(xpath = "//div[@class=\"dayContainer\"]//span[contains(@class,'flatpickr-day') and text()='18']")
+    public WebElement day;
+
+    @FindBy(xpath = "//input[@name='gender'][@value='2']")
+    public WebElement gender;
+
+    @FindBy(xpath = "//button[@class='my-btn -btn-pill -btn-md -btn-grd-bg']")
+    public WebElement btnconfirm;
+
     @FindBy (xpath = "//label[contains(text(),'Họ và tên là bắt buộc')]")
     public  WebElement lbemptyname;
+
+    @FindBy(xpath = "//label[contains(text(),'Điện thoại là bắt buộc')]")
+    public WebElement lbemptyphone;
+
+
 
     public ChangeInfoPage(WebDriver driver)
     {
